@@ -9,8 +9,7 @@ def withPod(body) {
 }
 
 def createImage(dockerfile, tag, version){
-    sh('echo ${dockerfile}, ${tag}, ${version}')
-	//sh("executor --context=`pwd` --dockerfile=`pwd`/Dockerfile-debug --destination=joshendriks/kubectl:debug-v1.16 --single-snapshot --build-arg k8sversion=v1.16.9")
+	sh("executor --context=`pwd` --dockerfile=`pwd`/${dockerfile} --destination=joshendriks/kubectl:${tag} --single-snapshot --build-arg k8sversion=${version}")
 }
 
 withPod {
@@ -27,14 +26,6 @@ withPod {
 				createImage("Dockerfile", "debug-v1.18", "v1.18.2")
 				createImage("Dockerfile-debug", "debug", "v1.18.2")
 				createImage("Dockerfile", "latest", "v1.18.2")
-                //sh("executor --context=`pwd` --dockerfile=`pwd`/Dockerfile-debug --destination=joshendriks/kubectl:debug-v1.16 --single-snapshot --build-arg k8sversion=v1.16.9")
-                //sh("executor --context=`pwd` --dockerfile=`pwd`/Dockerfile --destination=joshendriks/kubectl:v1.16 --single-snapshot --build-arg k8sversion=v1.16.9")
-                //sh("executor --context=`pwd` --dockerfile=`pwd`/Dockerfile-debug --destination=joshendriks/kubectl:debug-v1.17 --single-snapshot --build-arg k8sversion=v1.17.5")
-                //sh("executor --context=`pwd` --dockerfile=`pwd`/Dockerfile --destination=joshendriks/kubectl:v1.17 --single-snapshot --build-arg k8sversion=v1.17.5")
-                //sh("executor --context=`pwd` --dockerfile=`pwd`/Dockerfile-debug --destination=joshendriks/kubectl:debug-v1.18 --single-snapshot --build-arg k8sversion=v1.18.2")
-                //sh("executor --context=`pwd` --dockerfile=`pwd`/Dockerfile --destination=joshendriks/kubectl:v1.18 --single-snapshot --build-arg k8sversion=v1.18.2")
-                //sh("executor --context=`pwd` --dockerfile=`pwd`/Dockerfile-debug --destination=joshendriks/kubectl:debug --single-snapshot --build-arg k8sversion=v1.18.2")
-                //sh("executor --context=`pwd` --dockerfile=`pwd`/Dockerfile --destination=joshendriks/kubectl:latest --single-snapshot --build-arg k8sversion=v1.18.2")
 			}	
 		}
 	}
