@@ -9,7 +9,7 @@ def withPod(body) {
 }
 
 def createImage(dockerfile, tag, version){
-    sh('echo "${dockerfile}, ${dockerfile}, ${dockerfile}"')
+    sh('echo ${dockerfile}, ${tag}, ${version}')
 	//sh("executor --context=`pwd` --dockerfile=`pwd`/Dockerfile-debug --destination=joshendriks/kubectl:debug-v1.16 --single-snapshot --build-arg k8sversion=v1.16.9")
 }
 
