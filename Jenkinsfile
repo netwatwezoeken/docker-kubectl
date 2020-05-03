@@ -21,9 +21,9 @@ withPod {
 				createImage("Dockerfile-debug", "debug-v1.16", "v1.16.9")
 				createImage("Dockerfile", "v1.16", "v1.16.9")
 				createImage("Dockerfile-debug", "debug-v1.17", "v1.17.5")
-				createImage("Dockerfile", "debug-v1.17", "v1.17.5")
+				createImage("Dockerfile", "v1.17", "v1.17.5")
 				createImage("Dockerfile-debug", "debug-v1.18", "v1.18.2")
-				createImage("Dockerfile", "debug-v1.18", "v1.18.2")
+				createImage("Dockerfile", "v1.18", "v1.18.2")
 				createImage("Dockerfile-debug", "debug", "v1.18.2")
 				createImage("Dockerfile", "latest", "v1.18.2")
 			}	
