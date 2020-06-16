@@ -1,5 +1,5 @@
 def withPod(body) {
-  podTemplate(cloud: 'kubernetes', label: 'build', serviceAccount: 'jenkins', containers: [
+  podTemplate(cloud: 'kubernetes', label: 'build', containers: [
       containerTemplate(name: 'kaniko', image: 'gcr.io/kaniko-project/executor:debug', command: '/busybox/cat', ttyEnabled: true)
     ],
     volumes: [
