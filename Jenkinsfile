@@ -18,14 +18,14 @@ withPod {
         container('kaniko') {
             stage('Build image') {
                 sh("cp /cred/.dockerconfigjson /kaniko/.docker/config.json")
-				createImage("Dockerfile-debug", "debug-v1.16", "v1.16.9")
-				createImage("Dockerfile", "v1.16", "v1.16.9")
-				createImage("Dockerfile-debug", "debug-v1.17", "v1.17.5")
-				createImage("Dockerfile", "v1.17", "v1.17.5")
-				createImage("Dockerfile-debug", "debug-v1.18", "v1.18.2")
-				createImage("Dockerfile", "v1.18", "v1.18.2")
-				createImage("Dockerfile-debug", "debug", "v1.18.2")
-				createImage("Dockerfile", "latest", "v1.18.2")
+				createImage("Dockerfile-debug", "debug-v1.16", "v1.16.10")
+				createImage("Dockerfile", "v1.16", "v1.16.10")
+				createImage("Dockerfile-debug", "debug-v1.17", "v1.17.6")
+				createImage("Dockerfile", "v1.17", "v1.17.6")
+				createImage("Dockerfile-debug", "debug-v1.18", "v1.18.3")
+				createImage("Dockerfile", "v1.18", "v1.18.3")
+				createImage("Dockerfile-debug", "debug", "v1.18.3")
+				createImage("Dockerfile", "latest", "v1.18.3")
 			}	
 		}
 	}
