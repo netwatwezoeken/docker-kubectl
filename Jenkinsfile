@@ -3,7 +3,7 @@ def withPod(body) {
       containerTemplate(name: 'kaniko', image: 'gcr.io/kaniko-project/executor:debug', command: '/busybox/cat', ttyEnabled: true)
     ],
     volumes: [
-	  secretVolume(secretName: 'dockerhub', mountPath: '/cred')
+	  secretVolume(secretName: 'dockerhubjoshendriks', mountPath: '/cred')
     ]
  ) { body() }
 }
